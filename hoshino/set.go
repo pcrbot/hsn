@@ -34,7 +34,7 @@ var setCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(setCmd)
-	setCmd.Flags().String("path", "p", "set hoshino project path")
+	setCmd.Flags().StringP("path","p", ".", "set hoshino project path")
 	// Here you will define your flags and configuration settings.
 
 	// Cobra supports Persistent Flags which will work for this command

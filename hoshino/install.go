@@ -3,7 +3,7 @@ package hoshino
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/pcrbot/Hoshino-cli/utils"
+	"github.com/pcrbot/hsn/utils"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 	"io/ioutil"

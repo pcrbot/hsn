@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/pcrbot/hoshino-cli/hoshino"
+	"github.com/pcrbot/hsn/hoshino"
 )
 
 func main() {

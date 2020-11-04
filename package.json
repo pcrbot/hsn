@@ -1,10 +1,12 @@
 {
   "version": "v0.0.2",
   "plugin_list": [
-    "rua",
     "genshin",
     "eqa",
     "music",
-    "steam"
+    "steam",
+    "training",
+    "pcrsealkiller",
+    "pcrmiddaymusic"
   ]
 }
