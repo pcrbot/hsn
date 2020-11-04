@@ -44,12 +44,14 @@ var installCmd = &cobra.Command{
 			return
 		}
 		for index, requirement := range p.Plugin.Requirements { // 安装依赖
-			fmt.Println("正在安装依赖", index, ": ", err)
+			fmt.Println("正在安装依赖", index, ": ", requirement)
 			pip := exec.Command("pip3", "install", requirement, "-i", "https://pypi.tuna.tsinghua.edu.cn/simple")
 			pip.Stdout = os.Stdout
 			pip.Stderr = os.Stderr
 			err := pip.Run()
-			fmt.Println("[ERROR] ", err)
+			if err != nil {
+				fmt.Println("[ERROR] ", err)
+			}
 		}
 		func() { // 下载文件
 			path := hoshinoPath + "/hoshino/modules/" + p.Name
