@@ -27,7 +27,7 @@ var installCmd = &cobra.Command{
 		if ph, ok := viper.Get("HOSHINO_PATH").(string); ok {
 			hoshinoPath = ph
 		} else {
-			fmt.Println("Can't find HOSHINO_PATH, use 'hoshino set -path=' to set HOSHINO_PATH.")
+			fmt.Println("Can't find HOSHINO_PATH, use 'hsn set --path=' to set HOSHINO_PATH.")
 			return
 		}
 
@@ -45,7 +45,7 @@ var installCmd = &cobra.Command{
 		}
 		for index, requirement := range p.Plugin.Requirements { // 安装依赖
 			fmt.Println("正在安装依赖", index, ": ", err)
-			pip := exec.Command("pip", "install", requirement, "-i", "https://pypi.tuna.tsinghua.edu.cn/simple")
+			pip := exec.Command("pip3", "install", requirement, "-i", "https://pypi.tuna.tsinghua.edu.cn/simple")
 			pip.Stdout = os.Stdout
 			pip.Stderr = os.Stderr
 			err := pip.Run()

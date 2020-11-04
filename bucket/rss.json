@@ -1,0 +1,16 @@
+{
+  "name": "rss",
+  "version": "1.0.0",
+  "description": "rss订阅插件",
+  "plugin": {
+    "git": "zyujs/rss",
+    "files": [
+      "rss.py",
+      "README.md"
+    ],
+    "requirements": [
+      "feedparser~=5.2",
+      "pillow~=6.2"
+    ]
+  }
+}

@@ -13,7 +13,7 @@ var cfgFile string
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "hoshino-cli",
+	Use:   "hsn",
 	Short: "A quick hoshino develop and deploy helper",
 	Long:  `A quick hoshino develop and deploy helper based on Cobra`,
 	// Uncomment the following line if your bare application

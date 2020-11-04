@@ -1,0 +1,13 @@
+{
+  "name": "pcrmiddaymusic",
+  "version": "1.0.0",
+  "description": "",
+  "plugin": {
+    "git": "GWYOG/GWYOG-Hoshino-plugins/pcrmiddaymusic",
+    "files": [
+      "_song_data.py",
+      "pcrmiddaymusic.py"
+    ],
+    "requirements": []
+  }
+}

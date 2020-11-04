@@ -1,0 +1,17 @@
+{
+  "name": "pcrsealkiller",
+  "version": "1.0.0",
+  "description": "",
+  "plugin": {
+    "git": "GWYOG/GWYOG-Hoshino-plugins/pcrsealkiller",
+    "files": [
+      "__init__.py",
+      "_opencv_util.py",
+      "sealkiller.jpg",
+      "sealkiller.py"
+    ],
+    "requirements": [
+      "opencv-python"
+    ]
+  }
+}
