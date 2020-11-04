@@ -1,0 +1,19 @@
+{
+  "name": "rua",
+  "version": "1.0.0",
+  "description": "",
+  "plugin": {
+    "git": "pcrbot/erinilis-modules/eqa",
+    "files": [
+      "__init__.py",
+      "util.py",
+      "config.yaml",
+      "data/.gitignore",
+      "data/img/.gitignore"
+    ],
+    "requirements": [
+      "pyyaml",
+      "sqlitedict"
+    ]
+  }
+}

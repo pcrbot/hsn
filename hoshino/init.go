@@ -26,7 +26,7 @@ import (
 // initCmd represents the init command
 var initCmd = &cobra.Command{
 	Use:   "init",
-	Short: "Clone the Hoshino project",
+	Short: "初始化工程",
 	Long: `A simple way to clone the Hoshino project
 `,
 	Run: func(cmd *cobra.Command, args []string) {

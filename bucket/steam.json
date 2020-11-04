@@ -1,0 +1,13 @@
+{
+  "name": "steam",
+  "version": "1.0.0",
+  "description": "steam订阅插件",
+  "plugin": {
+    "git": "pcrbot/steam@main/steam",
+    "files": [
+      "steam.py",
+      "steam.json"
+    ],
+    "requirements": []
+  }
+}

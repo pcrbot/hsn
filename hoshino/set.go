@@ -5,15 +5,21 @@ import (
 	"github.com/pcrbot/Hoshino-cli/utils"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
+	"os"
 )
 
 // setCmd represents the set command
 var setCmd = &cobra.Command{
 	Use:   "set",
-	Short: "Set the project config",
+	Short: "设置工程目录",
 	Long:  `Set the project config`,
 	Run: func(cmd *cobra.Command, args []string) {
 		path := cmd.Flag("path").Value.String()
+
+		if path == "." {
+			path, _ = os.Getwd()
+		}
+
 		if utils.IsExist(path + "/run.py") {
 			viper.Set("HOSHINO_PATH", path)
 			err := viper.WriteConfig()
