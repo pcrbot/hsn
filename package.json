@@ -1,7 +1,10 @@
 {
-  "version": "0.0.1",
+  "version": "v0.0.2",
   "plugin_list": [
     "rua",
-    "genshin"
+    "genshin",
+    "eqa",
+    "music",
+    "steam"
   ]
 }
