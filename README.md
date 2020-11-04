@@ -8,7 +8,7 @@
 ### 设置Hoshino工程目录 
 `hsn set `
 
-- --path(-p) : 填写Hoshino工程目录的绝对路径，或者填写 `.` 将使用当前目录
+- --path : 填写Hoshino工程目录的绝对路径，或者填写 `.` 将使用当前目录
 
 ### 安装Hoshino插件
 `hsn install `
