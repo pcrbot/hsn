@@ -1,0 +1,9 @@
+{
+  "name": "genshin",
+  "version": "1.0.0",
+  "description": "",
+  "plugin": {
+    "git": "https://github.com/H-K-Y/Genshin_Impact_bot.git",
+    "requirements": []
+  }
+}

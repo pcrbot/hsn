@@ -1,6 +1,7 @@
 {
   "version": "0.0.1",
   "plugin_list": [
-    "rua"
+    "rua",
+    "genshin"
   ]
 }
