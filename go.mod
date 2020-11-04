@@ -1,4 +1,4 @@
-module github.com/pcrbot/hoshino
+module hoshino
 
 go 1.15
 
