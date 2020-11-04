@@ -2,28 +2,33 @@ package hoshino
 
 import (
 	"fmt"
-
+	"github.com/pcrbot/Hoshino-cli/utils"
 	"github.com/spf13/cobra"
+	"github.com/spf13/viper"
 )
 
 // setCmd represents the set command
 var setCmd = &cobra.Command{
 	Use:   "set",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Short: "Set the project config",
+	Long:  `Set the project config`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("set called")
+		path := cmd.Flag("path").Value.String()
+		if utils.IsExist(path + "/run.py") {
+			viper.Set("HOSHINO_PATH", path)
+			err := viper.WriteConfig()
+			if err != nil {
+				fmt.Println("write config error: ", err)
+			}
+		} else {
+			fmt.Println("Can't find run.py, please check the path.")
+		}
 	},
 }
 
 func init() {
 	rootCmd.AddCommand(setCmd)
-
+	setCmd.Flags().String("path", "p", "set hoshino project path")
 	// Here you will define your flags and configuration settings.
 
 	// Cobra supports Persistent Flags which will work for this command

@@ -15,7 +15,7 @@ var cfgFile string
 var rootCmd = &cobra.Command{
 	Use:   "hoshino",
 	Short: "A quick hoshino develop and deploy helper",
-	Long: `A quick hoshino develop and deploy helper based on Cobra`,
+	Long:  `A quick hoshino develop and deploy helper based on Cobra`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	//	Run: func(cmd *cobra.Command, args []string) { },

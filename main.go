@@ -1,6 +1,6 @@
 package main
 
-import "https:/hoshino"
+import "github.com/pcrbot/Hoshino-cli/hoshino"
 
 func main() {
 	hoshino.Execute()
