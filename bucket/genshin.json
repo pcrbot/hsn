@@ -1,8 +1,0 @@
-{
-  "name": "genshin",
-  "version": "1.0.0",
-  "description": "The hackable text editor",
-  "download": {
-    "github": "https://github.com/H-K-Y/Genshin_Impact_bot.git"
-  }
-}
