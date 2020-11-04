@@ -10,6 +10,8 @@
 
 - --path : 填写Hoshino工程目录的绝对路径，或者填写 `.` 将使用当前目录
 
+例如 `hsn set --path=/root/hoshino`
+
 ### 安装Hoshino插件
 `hsn install `
 
