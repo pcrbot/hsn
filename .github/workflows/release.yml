@@ -29,5 +29,5 @@ jobs:
           goos: ${{ matrix.goos }}
           goarch: ${{ matrix.goarch }}
           goversion: "https://golang.org/dl/go1.15.3.linux-amd64.tar.gz"
-          ldflags: -w -s -X "github.com/pcrbot/hsn/hoshino.Version=${{ env.RELEASE_VERSION }}"
+          ldflags: -w -s -X "github.com/pcrbot/hsn/cmd.Version=${{ env.RELEASE_VERSION }}"
           
