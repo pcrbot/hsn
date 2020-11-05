@@ -1,8 +1,8 @@
-package hoshino
+package cmd
 
 import (
 	"fmt"
-	"github.com/pcrbot/Hoshino-cli/utils"
+	"github.com/pcrbot/hsn/utils"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 	"os"
@@ -34,7 +34,7 @@ var setCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(setCmd)
-	setCmd.Flags().StringP("path","p", ".", "set hoshino project path")
+	setCmd.Flags().StringP("path", "p", ".", "set hoshino project path")
 	// Here you will define your flags and configuration settings.
 
 	// Cobra supports Persistent Flags which will work for this command

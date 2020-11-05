@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/pcrbot/hsn/hoshino"
+	"github.com/pcrbot/hsn/cmd"
 )
 
 func main() {
-	hoshino.Execute()
+	cmd.Execute()
 }

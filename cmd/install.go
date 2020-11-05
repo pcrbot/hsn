@@ -1,4 +1,4 @@
-package hoshino
+package cmd
 
 import (
 	"encoding/json"
