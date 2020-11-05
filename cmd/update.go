@@ -60,11 +60,10 @@ var updateCmd = &cobra.Command{
 			runtime.GOOS,
 			runtime.GOARCH,
 		)
-		if runtime.GOARCH == "windows" {
+		if runtime.GOOS == "windows" {
 			url = url + ".exe"
 		}
 
-		fmt.Println(url)
 		resp, err := http.Get(url)
 		if err != nil {
 			fmt.Println("更新失败!")
