@@ -33,7 +33,7 @@ var installCmd = &cobra.Command{
 
 		pluginName := args[0]
 		p := pluginInfo{}
-		rsp, err := utils.Download(fmt.Sprint("https://cdn.jsdelivr.net/gh/pcrbot/Hoshino-cli@main/bucket/", pluginName, ".json"))
+		rsp, err := utils.Download(fmt.Sprint("https://cdn.jsdelivr.net/gh/pcrbot/hsn@main/bucket/", pluginName, ".json"))
 		if err != nil {
 			fmt.Println("获取插件信息失败！")
 			return

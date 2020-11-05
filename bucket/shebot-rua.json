@@ -1,0 +1,22 @@
+{
+  "name": "shebot",
+  "version": "1.0.0",
+  "description": "",
+  "plugin": {
+    "git": "pcrbot/plugins-for-Hoshino/shebot",
+    "files": [
+      "rua/__init__.py",
+      "rua/data_source.py",
+      "rua/data/hand-1.png",
+      "rua/data/hand-2.png",
+      "rua/data/hand-3.png",
+      "rua/data/hand-4.png",
+      "rua/data/hand-5.png",
+      "_util.py",
+      "_res.py"
+    ],
+    "requirements": [
+      "filetype"
+    ]
+  }
+}
