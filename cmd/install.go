@@ -53,6 +53,7 @@ var installCmd = &cobra.Command{
 				fmt.Println("[ERROR] ", err)
 			}
 		}
+
 		func() { // 下载文件
 			path := hoshinoPath + "/hoshino/modules/" + p.Name
 			if !utils.IsExist(path) {
@@ -84,11 +85,13 @@ var installCmd = &cobra.Command{
 				return
 			}
 
-			git := exec.Command("git", "clone", p.Plugin.Git, path)
+			git := exec.Command("git", "clone", fmt.Sprint(GetGitHubImage(), "/", p.Plugin.Git), path)
 			git.Stdout = os.Stdout
 			git.Stderr = os.Stderr
 			err := git.Run()
-			fmt.Println("[ERROR] ", err)
+			if err != nil {
+				fmt.Println("[ERROR] ", err)
+			}
 		}()
 
 		configPath := fmt.Sprint(hoshinoPath, "/hoshino/config/__bot__.py")

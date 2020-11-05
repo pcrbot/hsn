@@ -5,7 +5,11 @@ import (
 	"fmt"
 	"github.com/pcrbot/hsn/utils"
 	"github.com/spf13/cobra"
+	"net/http"
 	"runtime"
+
+	"github.com/inconshreveable/go-update"
+	"github.com/manifoldco/promptui"
 )
 
 var Version = "unknown"
@@ -33,22 +37,48 @@ var updateCmd = &cobra.Command{
 			return
 		}
 
-		fmt.Printf("当前版本: %v\n最新版本: %v", Version, p.Version)
+		fmt.Printf("当前版本: %v\n最新版本: %v\n", Version, p.Version)
+		prompt := promptui.Prompt{
+			Label:     "你确定要更新吗?",
+			IsConfirm: true,
+		}
 
-		_ = utils.DownloadFile(
-			fmt.Sprintf(
-				"https://github.com/pcrbot/hsn/releases/download/%v/hsn-%v-%v-%v.zip",
-				p.Version,
-				p.Version,
-				runtime.GOOS,
-				runtime.GOARCH,
-			),
-			"111.zip",
+		_, err = prompt.Run()
+
+		if err != nil {
+			fmt.Printf("更新取消: %v\n", err)
+			return
+		}
+
+		fmt.Println("正在更新Hohsino-cli,请稍等...")
+
+		url := fmt.Sprintf(
+			"%v/pcrbot/hsn/releases/download/%v/hsn-%v-%v-%v",
+			GetGitHubImage(),
+			p.Version,
+			p.Version,
+			runtime.GOOS,
+			runtime.GOARCH,
 		)
+		if runtime.GOARCH == "windows" {
+			url = url + ".exe"
+		}
+
+		fmt.Println(url)
+		resp, err := http.Get(url)
+		if err != nil {
+			fmt.Println("更新失败!")
+			return
+		}
+		err = update.Apply(resp.Body, update.Options{})
+		if err != nil {
+			fmt.Println("更新失败!")
+			return
+		}
+		fmt.Println("更新完成！")
 	},
 }
 
 func init() {
 	rootCmd.AddCommand(updateCmd)
-
 }

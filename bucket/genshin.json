@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "plugin": {
-    "git": "https://hub.fastgit.org/H-K-Y/Genshin_Impact_bot.git",
+    "git": "H-K-Y/Genshin_Impact_bot.git",
     "requirements": []
   }
 }

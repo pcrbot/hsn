@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"fmt"
+	"github.com/pcrbot/hsn/utils"
 	"github.com/spf13/cobra"
 	"os"
 
@@ -60,10 +61,17 @@ func initConfig() {
 		// Search config in home directory with name ".hoshino" (without extension).
 		viper.AddConfigPath(home)
 		viper.SetConfigName(".hoshino")
+		if !utils.IsExist(home + "/.hoshino.yml") {
+			out, err := os.Create(home + "/.hoshino.yml")
+			defer out.Close()
+			if err != nil {
+				fmt.Println("failed to create config file: ", err, ".")
+				return
+			}
+		}
 	}
 
 	viper.AutomaticEnv() // read in environment variables that match
-
 	// If a config file is found, read it in.
 	if err := viper.ReadInConfig(); err != nil {
 		fmt.Println("Load config error:", err)

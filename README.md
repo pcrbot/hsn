@@ -2,16 +2,20 @@
 
 ## 安装方法
 
-Windows的简单粗暴方法：下载release中的对应文件，改名为hsn.exe扔到`C:\Windows\System32`，并在`C:\Users\Administrator`目录下创建文件`.hoshino.yml`
+Windows的简单粗暴方法：下载release中的对应文件，改名为hsn.exe扔到`C:\Windows\System32`
+(只要给`hsn.exe`添加到环境变量Path路径就行了)
 
 ## 使用方法
 
-### 设置Hoshino工程目录 
+### 设置CLI
 `hsn set `
 
-- --path : 填写Hoshino工程目录的绝对路径，或者不填写将使用当前目录
+- -p (--path) : 填写Hoshino工程目录的绝对路径，或者填写 `.` 将使用当前目录
+- -i (--image) : 设置使用Github的镜像源地址,默认为 `https://hub.fastgit.org`
 
-例如 `hsn set --path=/root/hoshino`
+例如 
+- `hsn set --path=/root/hoshino`
+- `hsn set -i=https://github.com` (好家伙，不用镜像)
 
 ### 安装Hoshino插件
 `hsn install `
@@ -19,3 +23,15 @@ Windows的简单粗暴方法：下载release中的对应文件，改名为hsn.ex
 请确保安装了`git`, `python`
 
 例如 `hsn install music`
+
+### 获取可用插件列表
+`hsn list`
+
+### 更新CLI
+`hsn update`
+
+### 生成发布插件的json文件 (TOGU)
+
+明天应该可以弄完(咕咕咕...)
+
+`hsn export [plugin name]`

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "plugin": {
-    "git": "https://github.com/zyujs/hoshino_training.git",
+    "git": "zyujs/hoshino_training.git",
     "requirements": []
   }
 }
