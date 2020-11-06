@@ -72,6 +72,7 @@ func DownloadFileWithProgress(filepath string, url string) error {
 		return err
 	}
 	_ = out.Close()
+	fmt.Print("\n")
 	if err = os.Rename(filepath+".tmp", filepath); err != nil {
 		return err
 	}

@@ -7,6 +7,7 @@ import (
 	"github.com/pcrbot/hsn/utils"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
+	"github.com/tidwall/gjson"
 	"io/ioutil"
 	"os"
 	"os/exec"
@@ -104,6 +105,30 @@ var installCmd = &cobra.Command{
 			fmt.Println("Failed to write config: ", err)
 			return
 		}
+		if p.Plugin.Res != nil {
+			fmt.Println("正在下载资源文件...")
+			res := gjson.ParseBytes(p.Plugin.Res)
+			res.ForEach(func(key, value gjson.Result) bool {
+				file := hoshinoPath + "/" + key.String()
+				fmt.Println("正在下载文件 ", file, "...")
+
+				paths := strings.Split(file, "/") // 创建路径
+				var ph = hoshinoPath
+				for _, f := range paths[:len(paths)-1] {
+					ph = ph + "/" + f
+					if !utils.IsExist(ph) {
+						_ = os.Mkdir(ph, os.ModePerm)
+					}
+				}
+
+				err = utils.DownloadFileWithProgress(file, value.String())
+				if err != nil {
+					fmt.Println("下载文件 ", key.Value(), "失败...")
+				}
+				return true
+			})
+		}
+
 		fmt.Println("Success to install plugin ", p.Name, ".")
 	},
 }
@@ -120,9 +145,10 @@ type pluginInfo struct {
 }
 
 type plugin struct {
-	Git          string   `json:"git"`
-	Files        []string `json:"files"`
-	Requirements []string `json:"requirements"`
+	Git          string          `json:"git"`
+	Files        []string        `json:"files"`
+	Requirements []string        `json:"requirements"`
+	Res          json.RawMessage `json:"res"`
 }
 
 func GetHoshinoPath() (string, error) {
