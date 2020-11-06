@@ -5,6 +5,8 @@
 Windows的简单粗暴方法：下载release中的对应文件，改名为hsn.exe扔到`C:\Windows\System32`
 (只要给`hsn.exe`添加到环境变量Path路径就行了)
 
+Linux的简单粗暴方法：下载release中的对应文件，改名为hsn扔到`\bin`文件夹下 (只要有环境变量就行了)
+
 ## 使用方法
 
 ### 设置CLI
@@ -30,8 +32,8 @@ Windows的简单粗暴方法：下载release中的对应文件，改名为hsn.ex
 ### 更新CLI
 `hsn update`
 
-### 生成发布插件的json文件 (TOGU)
-
-明天应该可以弄完(咕咕咕...)
+### 生成发布插件的json文件 
 
 `hsn export [plugin name]`
+
+让后填写仓库地址,所需依赖和资源文件就行了
