@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "plugin": {
-    "git": "",
+    "git": "GWYOG/GWYOG-Hoshino-plugins/pokemanpcr",
     "files": [
       "__init__.py",
       "image/31001.webp",
