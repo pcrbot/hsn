@@ -1,0 +1,12 @@
+{
+  "name": "bilisearchspider",
+  "version": "1.0.0",
+  "description": "",
+  "plugin": {
+    "git": "GWYOG/GWYOG-Hoshino-plugins/bilisearchspider",
+    "files": [
+      "bilisearchspider.py"
+    ],
+    "requirements": []
+  }
+}

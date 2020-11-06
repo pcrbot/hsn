@@ -1,14 +1,16 @@
 {
   "version": "v0.1.0",
   "plugin_list": [
-    "genshin",
+    "rss",
     "eqa",
     "music",
     "steam",
+    "genshin",
     "training",
+    "shebot-rua",
     "pcrsealkiller",
     "pcrmiddaymusic",
-    "shebot-rua",
-    "rss"
+    "pcrmemorygames",
+    "bilisearchspider",
   ]
 }

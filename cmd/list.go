@@ -15,7 +15,7 @@ var listCmd = &cobra.Command{
 	Long:  `list all of the available plugin`,
 	Run: func(cmd *cobra.Command, args []string) {
 		p := PluginPackage{}
-		rsp, err := utils.Download(fmt.Sprint("https://cdn.jsdelivr.net/gh/pcrbot/hsn@main/package.json"))
+		rsp, err := utils.Download("https://cdn.jsdelivr.net/gh/pcrbot/hsn@main/package.json")
 		if err != nil {
 			fmt.Println("获取插件插件失败！")
 			return

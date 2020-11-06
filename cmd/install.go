@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"encoding/json"
+	"errors"
 	"fmt"
 	"github.com/pcrbot/hsn/utils"
 	"github.com/spf13/cobra"
@@ -22,12 +23,9 @@ var installCmd = &cobra.Command{
 			fmt.Println("请输入你要安装的插件，例如 hoshino install rua")
 			return
 		}
-
-		var hoshinoPath string
-		if ph, ok := viper.Get("HOSHINO_PATH").(string); ok {
-			hoshinoPath = ph
-		} else {
-			fmt.Println("Can't find HOSHINO_PATH, use 'hsn set --path=' to set HOSHINO_PATH.")
+		hoshinoPath, err := GetHoshinoPath()
+		if err != nil {
+			fmt.Println(err)
 			return
 		}
 
@@ -125,4 +123,12 @@ type plugin struct {
 	Git          string   `json:"git"`
 	Files        []string `json:"files"`
 	Requirements []string `json:"requirements"`
+}
+
+func GetHoshinoPath() (string, error) {
+	if ph, ok := viper.Get("HOSHINO_PATH").(string); ok {
+		return ph, nil
+	} else {
+		return "", errors.New("can't find HOSHINO_PATH, use 'hsn set --path=' to set HOSHINO_PATH")
+	}
 }
