@@ -1,5 +1,5 @@
 {
-  "version": "v0.1.0",
+  "version": "v0.1.1",
   "plugin_list": [
     "rss",
     "eqa",
@@ -8,6 +8,7 @@
     "genshin",
     "training",
     "shebot-rua",
+    "pokemanpcr",
     "pcrsealkiller",
     "pcrmiddaymusic",
     "pcrmemorygames",
