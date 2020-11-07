@@ -37,3 +37,7 @@ Linux的简单粗暴方法：下载release中的对应文件，改名为hsn扔�
 `hsn export [plugin name]`
 
 然后填写仓库地址,所需依赖和资源文件就行了
+
+`bucket`文件夹保存了已适配插件的信息，
+你可以向本项目提交issue或pr来发布您的插件到hsn插件仓库
+[插件适配指南](docs/plugin.md)
