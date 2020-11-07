@@ -1,7 +1,7 @@
 {
   "name": "hoshino_training",
   "version": "1.0.0",
-  "description": "",
+  "description": "在不对hoshino文件进行任何修改的情况下, 使用反射特性热替换相关函数, 实现对hoshino某些功能的定制",
   "plugin": {
     "git": "zyujs/hoshino_training.git",
     "requirements": []

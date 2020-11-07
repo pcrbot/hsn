@@ -1,7 +1,7 @@
 {
   "name": "generator",
   "version": "1.0.0",
-  "description": "",
+  "description": "生成器插件",
   "plugin": {
     "git": "pcrbot/cappuccilo_plugins/generator",
     "files": [

@@ -1,7 +1,7 @@
 {
   "name": "bilisearchspider",
   "version": "1.0.0",
-  "description": "",
+  "description": "B站搜索爬虫",
   "plugin": {
     "git": "GWYOG/GWYOG-Hoshino-plugins/bilisearchspider",
     "files": [

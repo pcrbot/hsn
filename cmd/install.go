@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"github.com/manifoldco/promptui"
 	"github.com/pcrbot/hsn/utils"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
@@ -20,8 +21,8 @@ var installCmd = &cobra.Command{
 	Short: "安装插件",
 	Long:  `A quick way to install plugin`,
 	Run: func(cmd *cobra.Command, args []string) {
-		if args == nil {
-			fmt.Println("请输入你要安装的插件，例如 hoshino install rua")
+		if args == nil || len(args) == 0 {
+			fmt.Println("请输入你要安装的插件，例如 hsn install eqa")
 			return
 		}
 		hoshinoPath, err := GetHoshinoPath()
@@ -42,6 +43,22 @@ var installCmd = &cobra.Command{
 			fmt.Println("获取插件信息失败！")
 			return
 		}
+		fmt.Println("插件名: ", pluginName)
+		fmt.Println("包名: ", p.Name)
+		fmt.Println("当前版本: ", p.Version)
+		fmt.Println("插件说明: ", p.Description)
+		prompt := promptui.Prompt{
+			Label:     "你确定要安装该插件吗?",
+			IsConfirm: true,
+		}
+
+		_, err = prompt.Run()
+
+		if err != nil {
+			fmt.Printf("已取消安装...")
+			return
+		}
+
 		for index, requirement := range p.Plugin.Requirements { // 安装依赖
 			fmt.Println("正在安装依赖", index, ": ", requirement)
 			pip := exec.Command("pip3", "install", requirement, "-i", "https://pypi.tuna.tsinghua.edu.cn/simple")

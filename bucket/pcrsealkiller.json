@@ -1,7 +1,7 @@
 {
   "name": "pcrsealkiller",
   "version": "1.0.0",
-  "description": "",
+  "description": "公会群里被海豹骑脸的非酋们的福音",
   "plugin": {
     "git": "GWYOG/GWYOG-Hoshino-plugins/pcrsealkiller",
     "files": [

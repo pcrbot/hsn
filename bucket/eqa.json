@@ -1,7 +1,7 @@
 {
   "name": "eqa",
   "version": "1.0.0",
-  "description": "",
+  "description": "问答插件",
   "plugin": {
     "git": "pcrbot/erinilis-modules/eqa",
     "files": [

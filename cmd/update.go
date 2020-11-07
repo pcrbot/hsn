@@ -23,12 +23,12 @@ var updateCmd = &cobra.Command{
 		p := PluginPackage{}
 		rsp, err := utils.Download("https://cdn.jsdelivr.net/gh/pcrbot/hsn@main/package.json")
 		if err != nil {
-			fmt.Println("获取版本信息失败！")
+			fmt.Println("获取版本信息失败:", err)
 			return
 		}
 		err = json.Unmarshal(rsp, &p)
 		if err != nil {
-			fmt.Println("获取版本信息失败！")
+			fmt.Println("获取版本信息失败")
 			return
 		}
 
@@ -36,7 +36,6 @@ var updateCmd = &cobra.Command{
 			fmt.Println("已是最新版本,无需更新!")
 			return
 		}
-
 		fmt.Printf("当前版本: %v\n最新版本: %v\n", Version, p.Version)
 		prompt := promptui.Prompt{
 			Label:     "你确定要更新吗?",

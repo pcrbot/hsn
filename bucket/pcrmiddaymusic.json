@@ -1,7 +1,7 @@
 {
   "name": "pcrmiddaymusic",
   "version": "1.0.0",
-  "description": "",
+  "description": "公主连结午间音乐",
   "plugin": {
     "git": "GWYOG/GWYOG-Hoshino-plugins/pcrmiddaymusic",
     "files": [

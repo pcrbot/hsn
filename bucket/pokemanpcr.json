@@ -1,7 +1,7 @@
 {
   "name": "pokemanpcr",
   "version": "1.0.0",
-  "description": "",
+  "description": "戳机器人集卡小游戏",
   "plugin": {
     "git": "GWYOG/GWYOG-Hoshino-plugins/pokemanpcr",
     "files": [

@@ -1,7 +1,7 @@
 {
   "name": "shebot",
   "version": "1.0.0",
-  "description": "",
+  "description": "发送一张搓群友头像的gif图片",
   "plugin": {
     "git": "pcrbot/plugins-for-Hoshino/shebot",
     "files": [

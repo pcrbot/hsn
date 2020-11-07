@@ -1,7 +1,7 @@
 {
   "name": "eclanrank",
   "version": "1.0.0",
-  "description": "",
+  "description": "pcr公会站排行插件",
   "plugin": {
     "git": "pcrbot/erinilis-modules/eclanrank",
     "files": [

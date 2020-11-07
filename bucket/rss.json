@@ -1,7 +1,7 @@
 {
   "name": "rss",
   "version": "1.0.0",
-  "description": "rss订阅插件",
+  "description": "rss订阅插件,默认使用地河云RSSHub",
   "plugin": {
     "git": "zyujs/rss",
     "files": [

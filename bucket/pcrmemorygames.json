@@ -1,7 +1,7 @@
 {
   "name": "pcrmemorygames",
   "version": "1.0.0",
-  "description": "",
+  "description": "两个公主连结主题的记忆力小游戏",
   "plugin": {
     "git": "GWYOG/GWYOG-Hoshino-plugins/pcrmemorygames",
     "files": [
