@@ -1,7 +1,7 @@
 {
   "name": "genshin",
   "version": "1.0.0",
-  "description": ""原神相关娱乐和信息查询功能,
+  "description": "原神相关娱乐和信息查询功能",
   "plugin": {
     "git": "H-K-Y/Genshin_Impact_bot.git",
     "requirements": []
