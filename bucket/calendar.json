@@ -1,0 +1,13 @@
+{
+  "name": "calendar",
+  "version": "1.0.0",
+  "description": "",
+  "plugin": {
+    "git": "pcrbot/cappuccilo_plugins/calendar",
+    "files": [
+      "calendar.py",
+      "event.py"
+    ],
+    "requirements": []
+  }
+}

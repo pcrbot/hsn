@@ -1,0 +1,12 @@
+{
+  "name": "traceanime",
+  "version": "1.0.0",
+  "description": "",
+  "plugin": {
+    "git": "pcrbot/cappuccilo_plugins/traceanime",
+    "files": [
+      "traceanime.py"
+    ],
+    "requirements": []
+  }
+}

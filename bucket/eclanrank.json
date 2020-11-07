@@ -1,0 +1,22 @@
+{
+  "name": "eclanrank",
+  "version": "1.0.0",
+  "description": "",
+  "plugin": {
+    "git": "pcrbot/erinilis-modules/eclanrank",
+    "files": [
+      "README.md",
+      "__init__.py",
+      "clanrank.py",
+      "config.yaml",
+      "data/.gitignore",
+      "locked.py",
+      "query.py",
+      "util.py"
+    ],
+    "requirements": [
+      "pyyaml",
+      "sqlitedict"
+    ]
+  }
+}

@@ -1,6 +1,8 @@
 package utils
 
 import (
+	"bytes"
+	"compress/gzip"
 	"fmt"
 	"github.com/dustin/go-humanize"
 	"io"
@@ -26,14 +28,29 @@ func DownloadFile(url string, path string) (err error) {
 	return
 }
 
-func Download(url string) (data []byte, err error) {
-	resp, err := http.Get(url)
+func Download(url string) ([]byte, error) {
+	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
-		return
+		return nil, err
+	}
+	req.Header["User-Agent"] = []string{"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36 Edg/83.0.478.61"}
+	resp, err := http.DefaultClient.Do(req)
+	if err != nil {
+		return nil, err
 	}
 	defer resp.Body.Close()
-	data, err = ioutil.ReadAll(resp.Body)
-	return
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return nil, err
+	}
+	if strings.Contains(resp.Header.Get("Content-Encoding"), "gzip") {
+		buffer := bytes.NewBuffer(body)
+		r, _ := gzip.NewReader(buffer)
+		defer r.Close()
+		unCom, err := ioutil.ReadAll(r)
+		return unCom, err
+	}
+	return body, nil
 }
 
 type WriteCounter struct {
