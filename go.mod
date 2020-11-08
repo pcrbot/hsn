@@ -5,7 +5,10 @@ go 1.15
 require (
 	github.com/dustin/go-humanize v1.0.0
 	github.com/fsnotify/fsnotify v1.4.9 // indirect
-	github.com/inconshreveable/go-update v0.0.0-20160112193335-8152e7eb6ccf
+	github.com/getlantern/go-update v0.0.0-20190510022740-79c495ab728c
+	github.com/getlantern/golog v0.0.0-20201105130739-9586b8bde3a9 // indirect
+	github.com/kardianos/osext v0.0.0-20190222173326-2bc1f35cddc0 // indirect
+	github.com/kr/binarydist v0.1.0 // indirect
 	github.com/magiconair/properties v1.8.4 // indirect
 	github.com/manifoldco/promptui v0.8.0
 	github.com/mitchellh/go-homedir v1.1.0

@@ -5,10 +5,11 @@ import (
 	"fmt"
 	"github.com/pcrbot/hsn/utils"
 	"github.com/spf13/cobra"
+	"io"
 	"net/http"
 	"runtime"
 
-	"github.com/inconshreveable/go-update"
+	"github.com/getlantern/go-update"
 	"github.com/manifoldco/promptui"
 )
 
@@ -68,7 +69,9 @@ var updateCmd = &cobra.Command{
 			fmt.Println("更新失败!")
 			return
 		}
-		err = update.Apply(resp.Body, update.Options{})
+		wc := utils.WriteCounter{}
+		err, _ = update.New().FromStream(io.TeeReader(resp.Body, &wc))
+		fmt.Println()
 		if err != nil {
 			fmt.Println("更新失败!")
 			return

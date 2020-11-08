@@ -54,14 +54,12 @@ func Download(url string) ([]byte, error) {
 }
 
 type WriteCounter struct {
-	Data  []byte
 	Total uint64
 }
 
 func (wc *WriteCounter) Write(p []byte) (int, error) {
 	n := len(p)
 	wc.Total += uint64(n)
-	wc.Data = append(wc.Data, p...)
 	wc.PrintProgress()
 	return n, nil
 }
@@ -83,7 +81,6 @@ func DownloadFileWithProgress(filepath string, url string) error {
 	}
 	defer resp.Body.Close()
 	counter := &WriteCounter{}
-	counter.Data = []byte{}
 	if _, err = io.Copy(out, io.TeeReader(resp.Body, counter)); err != nil {
 		_ = out.Close()
 		return err
@@ -94,16 +91,4 @@ func DownloadFileWithProgress(filepath string, url string) error {
 		return err
 	}
 	return nil
-}
-
-func DownloadWithProgress(url string) ([]byte, error) {
-	resp, err := http.Get(url)
-	if err != nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-	counter := &WriteCounter{}
-
-	_ = io.TeeReader(resp.Body, counter)
-	return counter.Data, nil
 }
