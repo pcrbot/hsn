@@ -13,11 +13,17 @@ Linux的简单粗暴方法：下载release中的对应文件，改名为hsn扔�
 `hsn set `
 
 - -p (--path) : 填写Hoshino工程目录的绝对路径，或者填写 `.` 将使用当前目录
-- -i (--image) : 设置使用Github的镜像源地址,默认为 `https://hub.fastgit.org`
+- -i (--image) : 设置使用Github的镜像源地址,默认为 `https://github.com`
 
 例如 
 - `hsn set --path=/root/hoshino`
-- `hsn set -i=https://github.com` (好家伙，不用镜像)
+- `hsn set -i=https://github.com`
+
+可用镜像源 
+- `https://hub.fastgit.org`
+- `https://github.com.cnpmjs.org`
+- `https://github.bajins.com`
+- `https://github.rc1844.workers.dev`
 
 ### 安装Hoshino插件
 `hsn install `

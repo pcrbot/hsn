@@ -58,5 +58,5 @@ func GetGitHubImage() string {
 	if image, ok := viper.Get("GITHUB_IMAGE").(string); ok {
 		return image
 	}
-	return "https://github.bajins.com" // 默认使用镜像源提高速度
+	return "https://github.com" // 默认不使用镜像保证兼容性
 }

@@ -15,8 +15,8 @@ var cfgFile string
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "hsn",
-	Short: "A quick hoshino develop and deploy helper",
-	Long:  `A quick hoshino develop and deploy helper based on Cobra`,
+	Short: "A quick hoshino helper",
+	Long:  `A quick hoshino helper based on Cobra`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	//	Run: func(cmd *cobra.Command, args []string) { },
