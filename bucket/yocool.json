@@ -3,10 +3,6 @@
   "version": "1.0.0",
   "description": "YoCool的插件化控制台",
   "plugin": {
-    "git": "A-kirami/YoCool-Console.git",
-    "files": [],
-    "requirements": [
-      "shutil"
-    ]
+    "git": "A-kirami/YoCool-Console.git"
   }
 }
