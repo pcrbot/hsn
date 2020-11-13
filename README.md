@@ -24,6 +24,10 @@ Linux的简单粗暴方法：下载release中的对应文件，改名为hsn扔�
 - `https://github.com.cnpmjs.org`
 - `https://github.bajins.com`
 - `https://github.rc1844.workers.dev`
+### 获取可用插件列表
+`hsn list`
+
+获取已适配插件列表及其序号
 
 ### 安装Hoshino插件
 `hsn install `
@@ -32,8 +36,9 @@ Linux的简单粗暴方法：下载release中的对应文件，改名为hsn扔�
 
 例如 `hsn install music`
 
-### 获取可用插件列表
-`hsn list`
+可以通过序号安装
+
+例如 `hsn install 1`
 
 ### 更新CLI
 `hsn update`

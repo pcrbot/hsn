@@ -12,6 +12,7 @@ import (
 	"io/ioutil"
 	"os"
 	"os/exec"
+	"strconv"
 	"strings"
 )
 
@@ -32,6 +33,9 @@ var installCmd = &cobra.Command{
 		}
 
 		pluginName := args[0]
+		if i, err := strconv.Atoi(pluginName);err == nil {
+			pluginName = GetPluginName(i)
+		}
 		p := pluginInfo{}
 		rsp, err := utils.Download(fmt.Sprint("https://cdn.jsdelivr.net/gh/pcrbot/hsn@main/bucket/", pluginName, ".json"))
 		if err != nil {
@@ -174,4 +178,23 @@ func GetHoshinoPath() (string, error) {
 	} else {
 		return "", errors.New("can't find HOSHINO_PATH, use 'hsn set --path=' to set HOSHINO_PATH")
 	}
+}
+
+func GetPluginName(index int) string {
+	p := PluginPackage{}
+	rsp, err := utils.Download("https://cdn.jsdelivr.net/gh/pcrbot/hsn@main/package.json")
+	if err != nil {
+		fmt.Println("获取插件列表失败！")
+		return ""
+	}
+	err = json.Unmarshal(rsp, &p)
+	if err != nil {
+		fmt.Println("获取插件列表失败！")
+		return ""
+	}
+
+	if index < len(p.PluginList) {
+		return p.PluginList[index]
+	}
+	return ""
 }
