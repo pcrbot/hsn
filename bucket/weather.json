@@ -1,0 +1,14 @@
+{
+  "name": "weather",
+  "version": "1.0.0",
+  "description": "查询城市的一周天气预报",
+  "plugin": {
+    "git": "pcrbot/Salmon-plugin-transplant/weather",
+    "files": [
+      "weather.py"
+    ],
+    "requirements": [
+      "jieba"
+    ]
+  }
+}

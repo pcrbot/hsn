@@ -1,0 +1,11 @@
+{
+  "name": "weather",
+  "version": "1.0.0",
+  "description": "知乎热搜查询插件",
+  "plugin": {
+    "git": "pcrbot/Salmon-plugin-transplant/zhihu",
+    "files": [
+      "zhihu.py"
+    ]
+  }
+}

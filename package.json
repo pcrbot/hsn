@@ -1,12 +1,14 @@
 {
-  "version": "v0.1.3",
+  "version": "v0.1.4",
   "plugin_list": [
     "rss",
     "eqa",
     "music",
     "steam",
+    "zhihu",
     "yocool",
     "genshin",
+    "weather",
     "calendar",
     "training",
     "eclanrank",
