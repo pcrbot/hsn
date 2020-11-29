@@ -65,7 +65,7 @@ var installCmd = &cobra.Command{
 
 		for index, requirement := range p.Plugin.Requirements { // 安装依赖
 			fmt.Println("正在安装依赖", index, ": ", requirement)
-			pip := exec.Command("pip3", "install", requirement, "-i", "https://pypi.tuna.tsinghua.edu.cn/simple")
+			pip := exec.Command(GetPipCommand()[0], append(GetPipCommand()[1:],"install", requirement, "-i", "https://pypi.tuna.tsinghua.edu.cn/simple")...)
 			pip.Stdout = os.Stdout
 			pip.Stderr = os.Stderr
 			err := pip.Run()
