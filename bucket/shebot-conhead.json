@@ -1,7 +1,7 @@
 {
   "name": "shebot",
   "version": "1.0.0",
-  "description": "",
+  "description": "利用opencv和百度人脸识别api接臭鼬头",
   "plugin": {
     "git": "pcrbot/plugins-for-Hoshino/shebot",
     "files": [
