@@ -61,7 +61,7 @@ var exportCmd = &cobra.Command{
 			export.Plugin.Files = append(export.Plugin.Files, file[len(exportFolder)+1:])
 		}
 
-		exportData, err := json.Marshal(export)
+		exportData, err := json.MarshalIndent(export, "", "    ")
 		if err != nil {
 			fmt.Printf("导出失败: %v\n", err)
 			return

@@ -66,7 +66,7 @@ func GetGitHubImage() string {
 
 func GetPipCommand() []string {
 	if pip, ok := viper.Get("PIP_COMMAND").(string); ok {
-		return strings.Split(pip," ")
+		return strings.Split(pip, " ")
 	}
 	return []string{"pip3"}
 }

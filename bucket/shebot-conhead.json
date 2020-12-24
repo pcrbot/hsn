@@ -1,0 +1,36 @@
+{
+  "name": "shebot",
+  "version": "1.0.0",
+  "description": "",
+  "plugin": {
+    "git": "pcrbot/plugins-for-Hoshino/shebot",
+    "files": [
+      "_res.py",
+      "_util.py",
+      "conhead/__init__.py",
+      "conhead/api模式添加头示意图.png",
+      "conhead/config.py",
+      "conhead/data/head/1/1.png",
+      "conhead/data/head/1/dat.json",
+      "conhead/data/head/2/2.png",
+      "conhead/data/head/2/dat.json",
+      "conhead/data/lbpcascade_animeface.xml",
+      "conhead/data/接头失败.png",
+      "conhead/data/没找到头.png",
+      "conhead/data/猫猫头_0.png",
+      "conhead/data/猫猫头_1.png",
+      "conhead/data/猫猫头_2.png",
+      "conhead/data/猫猫头_3.png",
+      "conhead/data/猫猫头_4.png",
+      "conhead/data/猫猫头_5.png",
+      "conhead/data/猫猫头_6.png",
+      "conhead/data_source.py",
+      "conhead/opencv.py",
+      "conhead/output/2020-12-13-161726.png",
+      "conhead/readme.txt"
+    ],
+    "requirements": [
+      "opencv-python"
+    ]
+  }
+}
