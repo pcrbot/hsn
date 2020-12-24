@@ -1,0 +1,9 @@
+{
+  "name": "forward_ad_killer",
+  "version": "1.0.0",
+  "description": "删除合并转发内的广告并重新打包转发",
+  "plugin": {
+    "git": "ColdThunder11/forward_ad_killer.git",
+    "requirements": []
+  }
+}
