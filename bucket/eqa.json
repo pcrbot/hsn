@@ -1,15 +1,15 @@
 {
-  "name": "eqa",
+  "name": "erinilis-modules",
   "version": "1.0.0",
   "description": "问答插件",
   "plugin": {
-    "git": "pcrbot/erinilis-modules/eqa",
+    "git": "pcrbot/erinilis-modules",
     "files": [
-      "__init__.py",
-      "util.py",
-      "config.yaml",
-      "data/.gitignore",
-      "data/img/.gitignore"
+      "eqa/__init__.py",
+      "eqa/util.py",
+      "eqa/config.yaml",
+      "eqa/data/.gitignore",
+      "eqa/data/img/.gitignore"
     ],
     "requirements": [
       "pyyaml",
